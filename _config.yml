@@ -21,9 +21,9 @@ footer-links:
   email: daniil@svetlov.pro
 #  facebook: 
 #  flickr: 
-#  github:
+  github: dsvetlov
 #  instagram: 
-# linkedin: 
+#  linkedin: 
 #  pinterest: 
   rss: 1 # just type anything here for a working RSS icon, make sure you set the "url" above!
 #  twitter: jekyllrb
