@@ -1,7 +1,7 @@
 ---
 title: Cisco ASA stateful failover: подводные камни
 layout: post
-published: no
+published: false
 ---
 
 Настраивал на этой неделе [отказоустойчивую пару Cisco ASA 5512-X](http://www.cisco.com/c/en/us/td/docs/security/asa/asa93/configuration/general/asa-general-cli/ha-failover.html#pgfId-1494550). Отличительная особенность фейловера у ASA - так называемый [stateful failover](http://www.cisco.com/c/en/us/td/docs/security/asa/asa93/configuration/general/asa-general-cli/ha-failover.html#pgfId-1495008). Технология очень крутая. Как говорится "не единого разрыва". Одно из устройств можно спокойно выключить, перезагрузить, взровать - ни одно соединение не порвется. Достигается такой эффект за счет непрерывной репликации статуса соединений между устройствами по отдельному линку. Реплцируется почти все - arp таблица, tcp сессии, udp сессии, Site-to-Site IPsec (всего около 20 пунктов). 
