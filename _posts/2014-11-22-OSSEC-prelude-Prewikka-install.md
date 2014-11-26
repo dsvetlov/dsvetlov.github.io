@@ -1,5 +1,5 @@
 ---
-title: Установка OSSEC+Prelude+Prewikka
+title: Установка OSSEC и Prelude IDS + Prewikka
 layout: external
 external_url: http://habrahabr.ru/post/190500/
 ---
