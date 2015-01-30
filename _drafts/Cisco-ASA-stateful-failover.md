@@ -1,5 +1,5 @@
 ---
-title: Cisco ASA stateful failover: подводные камни
+title: Подводные камни Cisco ASA stateful failover
 layout: post
 published: false
 ---
@@ -10,4 +10,4 @@ published: false
 
 В моем случае двух разных физических сред не было. При таком раскладе надежнее настроить один EtherChannel на два разных свитча в стеке, чем городить отдельные линки для каждого соединения. Тут и возникли небольшие проблемы.
 
-# Cisco ASA и Etherchannel
+### Cisco ASA и Etherchannel
