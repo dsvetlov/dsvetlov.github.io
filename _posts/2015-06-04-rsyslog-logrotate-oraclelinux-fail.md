@@ -10,7 +10,7 @@ title: Баг пакета rsyslogd в Orale Linux 7
  
 При этом найти в интернете упоминания о похожей проблме не получается. Это вообще довольно странно. Т.е. проблема явно не глобальная, а "наша". Проверяю конфиг logrotate.
 
-{% highlight ruby %}
+{% highlight bash %}
 /var/log/cron
 /var/log/maillog
 /var/log/messages
