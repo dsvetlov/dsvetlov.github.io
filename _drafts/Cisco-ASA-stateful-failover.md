@@ -25,6 +25,11 @@ interface gigabitethernet 0/4
 !
 ```
 В моем случае двух разных физических сред не было. При таком раскладе надежнее настроить один EtherChannel на два разных свитча в стеке, чем городить отдельные линки для каждого соединения. Тут и возникли небольшие проблемы.
-
 ### Cisco ASA и Etherchannel
-
+Есть очень маленький пунктик в [мануале к ASA](http://www.cisco.com/c/en/us/td/docs/security/asa/asa93/configuration/general/asa-general-cli/interface-basic.html#pgfId-1887500). Он находится в разделе Guidelines for ASA Appliance Interfaces и потому его можно увидеть только если очень внимательно изучать документ. Касается этот пункт особенностей работы EtherChannel со стеком свитчей. 
+```
+The ASA does not support connecting an EtherChannel to a switch stack. If the ASA EtherChannel is connected cross stack, and if the Master switch is powered down, then the EtherChannel connected to the remaining switch will not come up.
+```
+Т.е. влючать два конца EtherChannel в стек противопоказано. Смысла же включать оба провода в один свитч попросту нет (особенно в случае, когада мы хотим использовать этот какнал для stateful failover link), так как это зарезервирует только разрыв одного из кабелей.
+Пришлось довольствоваться redundant интерфейсом.
+### Настройка failover link и stateful link на одном интерфейсе
